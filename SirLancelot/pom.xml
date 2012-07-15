@@ -4,4 +4,55 @@
   <artifactId>lancelot</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Another robocode robot</name>
+  <properties>
+  	<robocode.version>1.7.4.1</robocode.version>
+  	<robocode.path>/opt/robocode</robocode.path>
+  	<junit.version>4.9</junit.version>
+  	<picocontainer.version>2.9</picocontainer.version>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<maven.compiler.source>1.7</maven.compiler.source>
+	<maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.picocontainer</groupId>
+  		<artifactId>picocontainer</artifactId>
+  		<version>${picocontainer.version}</version>
+  		<scope>system</scope>
+  		<systemPath>${robocode.path}/libs/picocontainer-2.8.jar</systemPath>
+  	</dependency>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>${junit.version}</version>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>net.sf.robocode</groupId>
+  		<artifactId>robocode.testing</artifactId>
+  		<version>${robocode.version}</version>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>net.sf.robocode</groupId>
+  		<artifactId>robocode</artifactId>
+  		<version>${robocode.version}</version>
+  		<scope>system</scope>
+  		<systemPath>${robocode.path}/libs/robocode.jar</systemPath>
+  	</dependency>
+  </dependencies>
+  <build>
+	  <plugins>
+	  	<plugin>
+		  <groupId>org.apache.maven.plugins</groupId>
+		  <artifactId>maven-compiler-plugin</artifactId>
+		  <version>2.5.1</version>
+		  <configuration>
+		    <source>${maven.compiler.source}</source>
+		    <target>${maven.compiler.target}</target>
+		    <encoding>${project.build.sourceEncoding}</encoding>
+		  </configuration>
+		</plugin>
+	  </plugins>
+  </build>
 </project>
